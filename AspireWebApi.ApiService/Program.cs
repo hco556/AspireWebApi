@@ -1,3 +1,6 @@
+using Microsoft.AspNetCore.Server.IISIntegration;
+using System.Security.Principal;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add service defaults & Aspire client integrations.
@@ -9,6 +12,10 @@ builder.Services.AddProblemDetails();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddControllers();
+builder.Services.AddAuthentication(IISDefaults.AuthenticationScheme);
+builder.Services.AddAuthorization();
+//https://github.com/mkouhpayeh/code-wiki/blob/master/docs/csharp/authentication/authEx.md
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -37,7 +44,9 @@ app.MapGet("/weatherforecast", () =>
 app.MapControllers();
 app.MapDefaultEndpoints();
 
+
 app.Run();
+
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
