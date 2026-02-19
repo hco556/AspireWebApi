@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="AspireWebApi.ApiService/AspireWebApi.ApiService.csproj" />
+  <Project Path="AspireWebApi.AppHost/AspireWebApi.AppHost.csproj" />
+  <Project Path="AspireWebApi.ServiceDefaults/AspireWebApi.ServiceDefaults.csproj" />
+  <Project Path="AspireWebApi.Tests/AspireWebApi.Tests.csproj" />
+  <Project Path="AspireWebApi.Web/AspireWebApi.Web.csproj" />
+  <Project Path="PlaywrightNUnitTestProject/PlaywrightNUnitTestProject.csproj" Id="66bfb34d-d9ec-4c32-a38c-68d25be15365" />
+</Solution>
